@@ -1,4 +1,5 @@
 -- menerima parameter List Integer
-listSum :: [Integer] -> Integer
+listSum :: [Int] -> Int
 -- mengembalikan total dari elemen didalam list tersebut
-listSum a = sum a
+listSum [] = 0
+listSum (x : xs) = x + listSum xs
