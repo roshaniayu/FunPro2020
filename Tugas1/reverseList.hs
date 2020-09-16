@@ -1,2 +1,3 @@
 -- implementasi reverseList
-reverseList a = reverse a
+reverseList [] = []
+reverseList (x:xs) = reverseList xs ++ [x]
