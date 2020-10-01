@@ -22,9 +22,8 @@ triangular x = x + triangular (x-1)
 
 -- 3. Buatlah fungsi power tanpa menggunakan fungsi pangkat yang sudah ada di Haskell,
 -- input dibatasi hanya untuk bilangan bulat positif!
--- Referensi: https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
 power :: Int -> Int -> Int
-power _ 0 = 1
+power x 0 = 1
 power x y = x * power x (y-1)
 
 -- 4. Palindrome adalah kata yang dibaca sama dari depan ataupun belakang.
