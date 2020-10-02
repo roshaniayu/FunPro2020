@@ -43,7 +43,5 @@ sumEven xs = foldl (+) 0 [x | x <- xs, x `mod` 2 == 0]
 --                                   - return investasi tiap bulan (%) = y
 --                                   - durasi (bulan) = n
 invest :: Float -> Float -> Int -> Float
-invest x y n = (calculator x y n) - x
-    where calculator x y 0 = x
-          calculator x y n = formula(calculator x y (n-1)) y + x
-          formula x y = (x * (1 + (y / 100)))
+invest x y n = foldl (calc x) x [1 + (y / 100) | i <- [1..n]] - x
+    where calc x a b = a * b + x
